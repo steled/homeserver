@@ -43,13 +43,13 @@ helmReleases:
     repoURL: https://helm.cilium.io/
     namespace: kube-system
     # renovate: datasource=github-releases depName=cilium packageName=cilium/cilium
-    version: 1.16.4 # get version from here: https://helm.cilium.io/
+    version: 1.16.3 # get version from here: https://helm.cilium.io/
     values:
       - valuesFile: cilium-values.yaml
   - chart: kured
     repoURL: https://kubereboot.github.io/charts
     namespace: kube-system
     # renovate: datasource=github-releases depName=cilium packageName=kubereboot/charts
-    version: 5.5.2 # check version here: https://github.com/kubereboot/charts/tags
+    version: 5.5.1 # check version here: https://github.com/kubereboot/charts/tags
     values:
       - valuesFile: kured-values.yaml
