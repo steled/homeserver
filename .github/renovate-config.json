@@ -6,7 +6,7 @@
   "onboarding": false,
   "platform": "github",
   "repositories": [
-    "homeserver"
+    "steled/homeserver"
   ],
   "username": "steled"
 }
