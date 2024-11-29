@@ -4,7 +4,7 @@ name: kubeone-test
 
 versions:
   # renovate: datasource=github-releases depName=kubernetes packageName=kubernetes/kubernetes
-  kubernetes: '1.31.2' # check version here: https://kubernetes.io/releases/
+  kubernetes: '1.31.3' # check version here: https://kubernetes.io/releases/
 
 cloudProvider:
   none: {}
@@ -43,7 +43,7 @@ helmReleases:
     repoURL: https://helm.cilium.io/
     namespace: kube-system
     # renovate: datasource=github-releases depName=cilium packageName=cilium/cilium
-    version: 1.16.3 # get version from here: https://helm.cilium.io/
+    version: 1.16.4 # get version from here: https://helm.cilium.io/
     values:
       - valuesFile: cilium-values.yaml
   - chart: kured
