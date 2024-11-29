@@ -3,8 +3,8 @@ kind: KubeOneCluster
 name: kubeone-test
 
 versions:
-# renovate: datasource=github-releases depName=kubernetes packageName=kubernetes/kubernetes
-  kubernetes: '1.31.1' # check version here: https://kubernetes.io/releases/
+  # renovate: datasource=github-releases depName=kubernetes packageName=kubernetes/kubernetes
+  kubernetes: '1.31.3' # check version here: https://kubernetes.io/releases/
 
 cloudProvider:
   none: {}
@@ -42,12 +42,14 @@ helmReleases:
   - chart: cilium
     repoURL: https://helm.cilium.io/
     namespace: kube-system
+    # renovate: datasource=github-releases depName=cilium packageName=cilium/cilium
     version: 1.16.4 # get version from here: https://helm.cilium.io/
     values:
       - valuesFile: cilium-values.yaml
   - chart: kured
     repoURL: https://kubereboot.github.io/charts
     namespace: kube-system
+    # renovate: datasource=github-releases depName=cilium packageName=kubereboot/charts
     version: 5.5.2 # check version here: https://github.com/kubereboot/charts/tags
     values:
       - valuesFile: kured-values.yaml
