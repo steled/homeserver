@@ -50,6 +50,6 @@ helmReleases:
     repoURL: https://kubereboot.github.io/charts
     namespace: kube-system
     # renovate: datasource=github-releases depName=kured packageName=kubereboot/charts
-    version: 5.5.1 # check version here: https://github.com/kubereboot/charts/releases
+    version: 5.5.2 # check version here: https://github.com/kubereboot/charts/releases
     values:
       - valuesFile: kured-values.yaml
