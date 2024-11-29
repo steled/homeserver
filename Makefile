@@ -1,7 +1,7 @@
 ########## K1 Helper for easy management
  # check version here: https://github.com/kubermatic/kubeone/releases
 # renovate: datasource=github-releases depName=kubeone packageName=kubermatic/kubeone
-KUBEONE_VERSION=1.9.0
+KUBEONE_VERSION=1.8.3
 ROOT_DIR=$(realpath .)
 
 K1_CONFIG="."
