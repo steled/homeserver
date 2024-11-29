@@ -1,0 +1,12 @@
+{
+  "assigneesFromCodeOwners": true,
+  "branchConcurrentLimit": 3,
+  "branchPrefix": "renovate/",
+  "gitAuthor": "steled <34886888+steled@users.noreply.github.com>",
+  "onboarding": false,
+  "platform": "github",
+  "repositories": [
+    "homeserver"
+  ],
+  "username": "steled"
+}

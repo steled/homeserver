@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "baseBranches": [
+    "main"
+  ],
+  "dependencyDashboard": true,
+  "labels": ["dependencies"],
+  "enabledManagers": [
+    "custom.regex",
+    "github-actions",
+    "helm-values"
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "(^|/)Makefile$",
+        "(^|/)makefile$",
+        "(^|/)GNUMakefile$",
+        "\\.mk$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-.]+?) depName=(?<depName>[^\\s]+?)(?: (?:packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?(?: registryUrl=(?<registryUrl>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_VERSION\\s*:*\\??=\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
+      ]
+    }
+  ],
+  "github-actions": {
+    "fileMatch": [
+      "(^|/)(workflow-templates|\\.(?:github|gitea|forgejo)/(?:workflows|actions))/.+\\.ya?ml$",
+      "(^|/)action\\.ya?ml$"
+    ]
+  },
+  "helm-values": {
+    "fileMatch": [
+      "(^|/)values\\.yaml$",
+      "(^|/)homeserver\\.yaml$"
+    ],
+    "pinDigests": false
+  },
+  "packageRules": [
+    {
+       "matchManagers": ["custom.regex", "github-actions", "helm-values"],
+       "separateMinorPatch": true
+     },
+     {
+       "matchManagers": ["custom.regex", "github-actions", "helm-values"],
+       "matchUpdateTypes": ["patch"],
+       "automerge": true
+     }
+   ]
+}
