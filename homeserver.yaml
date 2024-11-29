@@ -1,0 +1,52 @@
+apiVersion: kubeone.k8c.io/v1beta2
+kind: KubeOneCluster
+name: kubeone-test
+
+versions:
+  kubernetes: '1.31.3' # check version here: https://kubernetes.io/releases/
+
+cloudProvider:
+  none: {}
+
+clusterNetwork:
+  cni:
+    external: {}
+
+controlPlane:
+  hosts:
+    - publicAddress: '172.16.4.27'
+      privateAddress: '172.16.4.27'
+      sshUsername: steled
+      sshPrivateKeyFile: '/home/steled/.ssh/steled.id_rsa'
+      taints: []
+
+# Provide the external address of your load balancer or the public addresses of
+# the first control plane nodes.
+apiEndpoint:
+  host: '172.16.4.27'
+  port: 6443
+
+machineController:
+  deploy: false
+
+operatingSystemManager:
+  deploy: false
+
+addons:
+  enable: true
+  addons:
+    - name: "unattended-upgrades"
+
+helmReleases:
+  - chart: cilium
+    repoURL: https://helm.cilium.io/
+    namespace: kube-system
+    version: 1.16.4 # get version from here: https://helm.cilium.io/
+    values:
+      - valuesFile: cilium-values.yaml
+  - chart: kured
+    repoURL: https://kubereboot.github.io/charts
+    namespace: kube-system
+    version: 5.5.2 # check version here: https://github.com/kubereboot/charts/tags
+    values:
+      - valuesFile: kured-values.yaml

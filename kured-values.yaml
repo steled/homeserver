@@ -1,0 +1,14 @@
+# podAnnotations:
+#   prometheus.io/scrape: "true"
+#   prometheus.io/path: "/metrics"
+#   prometheus.io/port: "8080"
+
+configuration:
+  rebootDays: ["fri"]
+  startTime: "2am"
+  endTime: "4am"
+  timeZone: "Europe/Berlin"
+  # prometheusUrl: "http://prometheus.monitoring.svc.cluster.local:9090"
+  alertFiringOnly: true
+  # notifyUrl: ""
+  # period: "2m" # only for testing purpose

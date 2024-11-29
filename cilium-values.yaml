@@ -1,0 +1,28 @@
+# for reference check: https://docs.cilium.io/en/stable/helm-reference/
+
+# envoyConfig:
+#   enabled: true
+
+ingressController:
+  default: true
+  enabled: true
+  loadbalancerMode: shared
+  service:
+    annotations:
+      "lbipam.cilium.io/ips": "172.16.4.40"
+
+k8sClientRateLimit:
+  burst: 100
+  qps: 50
+
+kubeProxyReplacement: true
+
+l2announcements:
+  enabled: true
+
+# loadBalancer:
+#   l7:
+#     backend: envoy
+
+operator:
+  replicas: 1
