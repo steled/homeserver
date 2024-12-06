@@ -7,8 +7,7 @@
   "labels": ["dependencies"],
   "enabledManagers": [
     "custom.regex",
-    "github-actions",
-    "helm-values"
+    "github-actions"
   ],
   "customManagers": [
     {
@@ -32,20 +31,13 @@
       "(^|/)action\\.ya?ml$"
     ]
   },
-  "helm-values": {
-    "fileMatch": [
-      "(^|/)values\\.yaml$",
-      "(^|/)homeserver\\.yaml$"
-    ],
-    "pinDigests": false
-  },
   "packageRules": [
     {
-      "matchManagers": ["custom.regex", "github-actions", "helm-values"],
+      "matchManagers": ["custom.regex", "github-actions"],
       "separateMinorPatch": true
     },
     {
-      "matchManagers": ["custom.regex", "github-actions", "helm-values"],
+      "matchManagers": ["custom.regex", "github-actions"],
       "matchUpdateTypes": ["patch"],
       "automerge": true
     },
