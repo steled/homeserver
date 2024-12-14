@@ -35,8 +35,9 @@ operatingSystemManager:
 
 addons:
   enable: true
+  path: "./addons"
   addons:
-    - name: "unattended-upgrades"
+    - name: unattended-upgrades
 
 helmReleases:
   - chart: cilium
