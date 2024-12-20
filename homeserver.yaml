@@ -4,7 +4,7 @@ name: kubeone-test
 
 versions:
   # renovate: datasource=github-releases depName=kubernetes packageName=kubernetes/kubernetes
-  kubernetes: '1.31.4' # check version here: https://kubernetes.io/releases/
+  kubernetes: '1.32.0' # check version here: https://kubernetes.io/releases/
 
 cloudProvider:
   none: {}
