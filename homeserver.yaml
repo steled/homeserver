@@ -44,7 +44,7 @@ helmReleases:
     repoURL: https://helm.cilium.io/
     namespace: kube-system
     # renovate: datasource=github-releases depName=cilium packageName=cilium/cilium
-    version: 1.16.4 # get version from here: https://helm.cilium.io/
+    version: 1.16.5 # get version from here: https://helm.cilium.io/
     values:
       - valuesFile: cilium-values.yaml
   - chart: kured
